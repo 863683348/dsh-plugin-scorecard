@@ -1,0 +1,14 @@
+import { name, inject, Config, apply } from "../lib/index.js";
+const tools = [];
+const ctx = { tools: { register: (t) => tools.push(t) } };
+const config = Config();
+apply(ctx, config);
+console.log("name=" + name);
+console.log("inject=" + JSON.stringify(inject));
+console.log("configKeys=" + Object.keys(config).join(","));
+console.log("tools=" + tools.map((t) => t.name).join(","));
+if (name !== "dsh-plugin-scorecard") throw new Error("name mismatch");
+if (!inject.includes("tools")) throw new Error("inject missing tools");
+const want = ["plugin_sync_catalog", "plugin_audit", "plugin_top", "plugin_search"];
+for (const w of want) if (!tools.some((t) => t.name === w)) throw new Error("missing tool " + w);
+console.log("SMOKE OK");
