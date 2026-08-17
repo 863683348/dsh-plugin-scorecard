@@ -1,0 +1,10 @@
+# dsh-plugin-scorecard — bundle patch layer.
+# Compose over the EMPTY entry list: insert the plugin into the composition.
+- insert:
+    - id: dsh-plugin-scorecard
+      name: 'dsh-plugin-scorecard'
+      config:
+        # githubToken: ''            # optional, raises GitHub API rate limits
+        # securityScan: true         # scan install scripts for risky patterns
+        # cacheTtlMs: 900000         # in-memory catalog TTL
+        # maxCatalogSize: 200        # repos fetched per sync

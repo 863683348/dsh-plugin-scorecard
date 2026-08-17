@@ -1,0 +1,17 @@
+{
+  "name": "dsh-plugin-scorecard",
+  "version": "0.1.0",
+  "description": "DSH plugin health scorecard: quality & security audit, rankings and search across the dsh-plugin ecosystem. 插件体检评分卡：质量/安全审计、榜单与搜索。",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": ["lib", "cordis.patch.yml", "README.md"],
+  "license": "MIT",
+  "scripts": { "test": "node test/scorer.test.mjs && node test/format.test.mjs" },
+  "publishConfig": { "access": "public" },
+  "dsh": { "bundle": { "patch": "./cordis.patch.yml" } },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  }
+}
