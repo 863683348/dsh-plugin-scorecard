@@ -7,6 +7,7 @@
 - **plugin_audit <名称>** 对单个插件出体检报告：0-100 分、A/B/C/D 等级、信号明细、证据链；高危安装脚本**一票否决**（🚨 封顶 30 分）
 - **plugin_top** 榜单（按评分 / star / 最近更新）
 - **plugin_search <关键词>** 语义搜索目录
+- **plugin_history <名称>** 历史评分曲线（时间/分数/等级、趋势方向）
 
 ## 评分模型
 
@@ -33,7 +34,10 @@ dsh plugin add dsh-plugin-scorecard
 |---|---|---|
 | githubToken | "" | GitHub Token，提升 API 限额（无 Token 时 60 次/小时） |
 | securityScan | true | 是否扫描安装脚本 |
-| cacheTtlMs | 900000 | 目录内存缓存 TTL |
+| cacheTtlMs | 900000 | 目录缓存 TTL（含工作区文件缓存） |
+| catalogFile | `.dsh/scorecard-catalog.json` | 目录持久化文件（会话工作区内） |
+| historyFile | `.dsh/scorecard-history.json` | 评分历史文件（会话工作区内） |
+| historyMaxEntries | 100 | 历史快照条数上限 |
 | maxCatalogSize | 200 | 每次同步的仓库数上限 |
 
 ## 开发
@@ -46,7 +50,7 @@ node test/format.test.mjs
 
 ## 路线图
 
-- v0.2：目录持久化（SQLite/JSON）+ 历史评分曲线
+- v0.2 ✅：目录持久化（JSON 缓存）+ 历史评分曲线（plugin_history）
 - v0.3：Web 设置页榜单（ui-settings-plugins 扩展点）+ 开放数据导出 JSON
 - v0.4：企业审计报告导出 / 私有化
 
