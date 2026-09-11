@@ -8,6 +8,7 @@
 - **plugin_top** 榜单（按评分 / star / 最近更新）
 - **plugin_search <关键词>** 语义搜索目录
 - **plugin_history <名称>** 历史评分曲线（时间/分数/等级、趋势方向）
+- **plugin_export** 导出目录与评分开放数据 JSON（默认 `.dsh/scorecard-export.json`）
 
 ## 评分模型
 
@@ -38,6 +39,7 @@ dsh plugin add dsh-plugin-scorecard
 | catalogFile | `.dsh/scorecard-catalog.json` | 目录持久化文件（会话工作区内） |
 | historyFile | `.dsh/scorecard-history.json` | 评分历史文件（会话工作区内） |
 | historyMaxEntries | 100 | 历史快照条数上限 |
+| exportFile | `.dsh/scorecard-export.json` | 开放数据导出文件（会话工作区内） |
 | maxCatalogSize | 200 | 每次同步的仓库数上限 |
 
 ## 开发
@@ -51,6 +53,7 @@ node test/format.test.mjs
 ## 路线图
 
 - v0.2 ✅：目录持久化（JSON 缓存）+ 历史评分曲线（plugin_history）
+- v0.3 ✅：目录增量同步（新增/更新/未变/移出）+ 开放数据导出（plugin_export）
 - v0.3：Web 设置页榜单（ui-settings-plugins 扩展点）+ 开放数据导出 JSON
 - v0.4：企业审计报告导出 / 私有化
 

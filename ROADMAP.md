@@ -36,7 +36,7 @@
 - [ ] README 更新（新配置 `historyFile` / `historyMaxEntries`、新动作说明）
 - [ ] vertical-toolkits dump-config 正常；本地冒烟：sync → audit → history
 
-## v0.3.0 — 增量同步 + 数据开放
+## v0.3.0 ✅ 已完成 — 增量同步 + 数据开放
 
 - `plugin_sync_catalog` 支持增量（仅拉取变更仓库）；`plugin_export` 导出目录/评分 JSON（开放数据）
 
