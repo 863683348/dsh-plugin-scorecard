@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-scorecard",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "DSH plugin health scorecard: quality & security audit, rankings, search, score history and open-data export across the dsh-plugin ecosystem, with a workspace-persisted incrementally-synced catalog. 插件体检评分卡：质量/安全审计、榜单、搜索、历史评分曲线与开放数据导出（目录增量同步）。",
   "type": "module",
   "main": "lib/index.js",
